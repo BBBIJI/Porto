@@ -1,6 +1,7 @@
 body {
   font-size: 28px;
   margin: 0;
+  background-color: #333;
 }
 
 ul {
@@ -32,3 +33,61 @@ li a:hover {
 .active {
   background-color: #4CAF50;
 }
+
+.circle-container {
+  position: relative;
+  width: 1000px;
+  height: 1000px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle{
+  height: 50px;
+  width: 50px;
+  background-color: #555;
+  border-radius: 50%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-circle{
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+}
+
+.circle-container.slide {
+  animation-name: slide-in;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(400px);
+  }
+}
+
+.circle-container.slide::after {
+  animation-name: slide-out;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(400px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
